@@ -1,27 +1,47 @@
-/*
-Copyright 2014 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 package main
 
 import (
 	"fmt"
-
-	"github.com/golang/example/stringutil"
 )
 
+// Get Actors state
+type Actors struct {
+	number    int
+	actorName string
+}
+
 func main() {
-	fmt.Println(stringutil.Reverse("!selpmaxe oG ,olleH"))
+	//Array Example
+	inspection := [3]int{5, 6, 89}
+	fmt.Printf("Inspections: %v\n", inspection)
+
+	//Slice Example
+	files := []int{5, 6, 89}
+	fmt.Println(files)
+
+	//Map example
+	provincePopulation := make(map[string]int)
+	provincePopulation = map[string]int{
+		"Quebec":           12000000,
+		"Ontario":          13000000,
+		"Manitoba":         1700000,
+		"British-Columbia": 230988776487494,
+		"Saskatchewan":     60549549854,
+		"Alberta":          98409384098098,
+	}
+	fmt.Printf("Province Plopulation : %v\n", provincePopulation)
+
+	//Struct Examples
+	firstActor := Actors{
+		number:    5145318616,
+		actorName: "Talel Dridi",
+	}
+
+	secondActor := struct {
+		age  int
+		name string
+	}{45, "Kalamata"}
+	fmt.Printf("Fist Actor : %v\n", firstActor.actorName)
+	fmt.Printf("Second Actor : %v\n", secondActor.name)
+
 }
