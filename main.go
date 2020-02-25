@@ -4,10 +4,17 @@ import (
 	"fmt"
 )
 
-// Get Actors state
+//Get Actors state
 type Actors struct {
 	number    int
 	actorName string
+}
+
+/** Get Actors speciality */
+type Speciality struct {
+	Actors
+	firstSpeciality  string
+	secondSpeciality []string
 }
 
 func main() {
@@ -30,6 +37,7 @@ func main() {
 		"Alberta":          98409384098098,
 	}
 	fmt.Printf("Province Plopulation : %v\n", provincePopulation)
+	fmt.Printf("Province Plopulation Quebec : %v\n", provincePopulation["Quebec"])
 
 	//Struct Examples
 	firstActor := Actors{
@@ -44,4 +52,11 @@ func main() {
 	fmt.Printf("Fist Actor : %v\n", firstActor.actorName)
 	fmt.Printf("Second Actor : %v\n", secondActor.name)
 
+	thirdActor := Speciality{}
+	thirdActor.actorName = "felaini"
+	thirdActor.number = 42
+	thirdActor.firstSpeciality = "Horror"
+	thirdActor.secondSpeciality = append(thirdActor.secondSpeciality, "Drama")
+
+	fmt.Printf("Third Actor: %v", thirdActor)
 }
